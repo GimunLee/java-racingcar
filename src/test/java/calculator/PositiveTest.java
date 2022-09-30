@@ -9,21 +9,21 @@ public class PositiveTest {
 
     @Test
     void create(){
-        Positive positive = new Positive("1");
-        assertThat(new Positive("1")).isEqualTo(new Positive(1));
+        PositiveNumber positive = new PositiveNumber("1");
+        assertThat(new PositiveNumber("1")).isEqualTo(new PositiveNumber(1));
     }
 
     @Test
     void 덧셈(){
-        Positive positive = new Positive("1");
-        Positive result = positive.plus(2);
-        assertThat(result).isEqualTo(new Positive(3));
+        PositiveNumber positive = new PositiveNumber("1");
+        PositiveNumber result = positive.plus(2);
+        assertThat(result).isEqualTo(new PositiveNumber(3));
     }
 
     @Test
     void 음수(){
         assertThatThrownBy(()->{
-                new Positive("-1");}
+                new PositiveNumber("-1");}
         ).isInstanceOf(RuntimeException.class);
     }
 }
