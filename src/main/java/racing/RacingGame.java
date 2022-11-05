@@ -6,8 +6,6 @@ public class RacingGame {
         int reps = InputView.requestNumber("시도할 회수는 몇 회 인가요?");
 
         Track track = new Track(new RacingOption(carCnt, reps));
-        track.createCars();
-
         ResultView.printTitle();
         track.start(reps);
     }

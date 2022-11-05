@@ -11,14 +11,8 @@ public class Track {
         this.option = option;
     }
 
-    public void createCars(){
-        this.cars = new ArrayList<>();
-        for (int idx = 0; idx < this.option.carCnt; idx++) {
-            this.cars.add(new Car());
-        }
-    }
-
     public void start(int reps) {
+        this.createCars();
         for (int rep = 0; rep < reps; rep++) {
             this.startOneRep();
         }
@@ -29,5 +23,12 @@ public class Track {
             ResultView.printMove(car.move());
         }
         System.out.println();
+    }
+
+    private void createCars(){
+        this.cars = new ArrayList<>();
+        for (int idx = 0; idx < this.option.getCarCnt(); idx++) {
+            this.cars.add(new Car());
+        }
     }
 }
